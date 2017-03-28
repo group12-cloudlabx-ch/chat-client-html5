@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<head jsf:id="head">
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link jsf:name="css/standard.css" rel="stylesheet" type="text/css" />
+    <link jsf:name="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link jsf:name="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+
+    <script jsf:target="body" jsf:name="js/jquery-2.1.1.min.js"/>
+    <script jsf:target="body" jsf:name="js/bootstrap.min.js"/>
+    <script jsf:target="body" jsf:name="js/websocket_core.js"/>
+    <script jsf:target="body" jsf:name="js/site_management.js"/>
+
+    <title>GUI - Management</title>
+
+</head>
+
+<body jsf:id="body">
+    <h1>DESM Middleware - Management Interface</h1>
+    <div class="container signin-wrapper">
+        <h:form class="form-signin">
+            <div class="btn-group">
+                <label for="component">Component</label>
+
+                <select id="component" size="1">
+                    <option>management</option>
+                    <option>kabinere420</option>
+                    <option>stellwerkobermattlangnau</option>
+                    <option>petrinetoml</option>
+                </select>
+            </div>
+            <button class="btn btn-large btn-primary" type="submit"
+                    id="enterRoom">Login</button>
+        </h:form>
+    </div>
+    <!-- /container -->
+
+    <div class="container control-wrapper">
+        <fieldset>
+            <legend class="status"></legend>
+            <div class="controls">
+                <button class="btn btn-large" type="button"
+                        id="switch_exit">EXIT</button>
+
+                <button class="btn btn-large" type="button"
+                        id="switch_controls">INITIALISATION</button>
+
+                <button class="btn btn-large" type="button"
+                        id="switch_gui">GUI</button>
+
+
+                <button class="btn btn-large" type="button"
+                        id="switch_log">LOG</button>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="container init-wrapper">
+        <fieldset>
+            <legend>Initialisation</legend>
+            <div class="controls">
+                <button class="btn btn-large" type="button"
+                        id="init_petrinet">PETRINET (OML)</button>
+
+                <button class="btn btn-large" type="button"
+                        id="init_interlocking">STELLWERK (OML)</button>
+
+                <button class="btn btn-large" type="button"
+                        id="init_cabine-ubw32">CABINE (DIGITAL)</button>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="container gui-wrapper">
+        <fieldset>
+            <legend>GUI</legend>
+            <div class="gui" style="background-color:black; height:800px;">
+
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="container log-wrapper">
+
+        <form id="do-log">
+
+            <fieldset>
+                <legend>Communication Log</legend>
+                <div class="controls">
+
+                    <input type="text" class="input-block-level"
+                           placeholder="Your message..." id="message" style="height: 60px; width:100%;" />
+                    <input type="submit" class="btn btn-large btn-block btn-primary"
+                           value="Send message" />
+
+                </div>
+            </fieldset>
+            <table id="response" class="table table-bordered"></table>
+        </form>
+    </div>
+
+</body>
+
+</html>

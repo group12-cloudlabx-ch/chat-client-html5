@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<head>
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/standard.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/management-common.js" type="text/javascript"></script>
+    <script src="js/management-desm.js" type="text/javascript"></script>
+
+    <title>#ChatClient</title>
+</head>
+
+<body>
+
+<div class="notification-box"></div>
+
+    <div class="page-header">
+
+        <div class="container-fluid" id="signin-wrapper">
+
+            <h2>
+                <button class="btn btn-large btn-primary" type="submit" id="connect">
+                    <span class="glyphicon glyphicon-off"></span>
+                </button>
+                <span>ChatClient</span>
+            </h2>
+
+            <form class="form-signin">
+                <div class="form-group">
+                    <label for="hostname">Chat Server URL</label>
+                    <input class="form-control" id="hostname" type="text" value="localhost">
+                </div>
+
+                <div class="form-group">
+                    <label for="hostport">Chat Server Port</label>
+                    <input class="form-control" id="hostport" type="text" value="8070">
+                </div>
+
+                <div class="form-group">
+                    <label for="component">Chat Room Nr.</label>
+                    <input class="form-control" id="component" type="text" value="1">
+                </div>
+
+            </form>
+        </div>
+
+        <div class="container-fluid control-wrapper">
+            <div class="btn-group controls">
+                <button class="btn btn-large btn-primary" data-toggle="button" type="button" id="switch_exit">
+                    <span class="glyphicon glyphicon-off"></span>
+                </button>
+
+                <button class="btn btn-large btn-primary" data-toggle="button" type="button" id="switch_status">
+                    <span class="glyphicon glyphicon-link"></span> STATUS
+                </button>
+
+                <button class="btn btn-large btn-primary" data-toggle="button" type="button" id="switch_communication">
+                    <span class="glyphicon glyphicon-send"></span> COMMUNICATION
+                </button>
+
+                <button class="btn btn-large btn-primary" data-toggle="button" type="button" id="switch_log">
+                    <span class="glyphicon glyphicon-list"></span> SYSTEM MESSAGES
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="container-fluid status-wrapper">
+            <fieldset>
+                <legend class="status"></legend>
+                <p id="status_connection">
+                    <i id="status_blinking" class="glyphicon glyphicon-flash"></i>
+                    <i id="status_text"></i>
+                </p>
+            </fieldset>
+        </div>
+
+        <div class="container-fluid communication-wrapper">
+            <form id="do-log">
+
+                <fieldset>
+                    <legend>Communication</legend>
+                    <div class="controls">
+
+                        <input type="text" id="message" class="form-control" placeholder="Send message..."/>
+                        <input type="submit" class="btn btn-primary btn-block" value="Send message" />
+
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+
+        <div class="container-fluid log-wrapper">
+            <fieldset>
+                <legend>Log</legend>
+                <div>
+                    <div id="log-filter">
+
+
+                    </div>
+                    <div class="table-responsive">
+                        <table id="log-window" class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        Topic
+                                    </td>
+                                    <td>
+                                        Payload
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</body>
+
+</html>
